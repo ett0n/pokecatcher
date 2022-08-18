@@ -1,0 +1,199 @@
+body {
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+  height: 40rem;
+  background-color: lightblue;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.fs-pkmn-loader {
+  display: none;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+}
+
+.first-screen,
+.description-screen,
+.game-screen {
+  display: none;
+}
+
+.first-screen.active,
+.description-screen.active,
+.game-screen.active {
+  display: flex;
+}
+
+.game-screen.active {
+  cursor: crosshair;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.3rem;
+  position: absolute;
+  bottom: 2rem;
+  width: calc(20rem - 3rem);
+}
+
+.gs {
+  &-header {
+    width: 100%;
+    height: 3rem;
+    background: #00000077;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+  }
+  &-background {
+    background-image: url("../assets/img/bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 20rem;
+    height: 40rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &-player {
+    background-image: url("../assets/img/player.png");
+    background-size: 150px;
+    position: absolute;
+    bottom: 0px;
+    left: calc((20rem - 100px) / 2);
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    background-repeat: no-repeat;
+  }
+  &-pokeball {
+    background-image: url("../assets/img/pokeball.png");
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    &-container {
+      padding: 0.5rem;
+      left: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      top: 1rem;
+    }
+    &.lost {
+      filter: grayscale(90%);
+      opacity: 0.5;
+    }
+  }
+  &-lvl {
+    color: white;
+    font-weight: bold;
+    opacity: 0.7;
+    &-container {
+      width: 50px;
+      height: 100%;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-pokemon-catched {
+    animation: scalePokemon 80ms ease-out;
+    filter: brightness(15);
+  }
+}
+
+.pokeball {
+  background-image: url("../assets/img/pokeball.png");
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+.gs-ball {
+  content: " ";
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background-color: orange;
+  border-radius: 100%;
+  opacity: 0;
+  top: 36rem;
+  left: 62%;
+  z-index: 500;
+}
+
+.gs-ball-anim {
+  animation-name: fireballx, firebally, ball;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out, ease-in, linear;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ball {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+    opacity: 1;
+  }
+}
+@keyframes fireballx {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    left: 62%;
+    transform: scale(1);
+  }
+}
+@keyframes firebally {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    top: 36rem;
+    transform: scale(1);
+  }
+}
+
+@keyframes scalePokemon {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.2) rotate(720deg);
+  }
+}

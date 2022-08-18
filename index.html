@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🇬🇱 PokeCatcher</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.scss" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="first-screen screen active">
+        <img height="100px" width="auto" style="margin-block-start: 1rem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
+        <div class="gs-pokemon" style="width: 160px; height: 160px; position: absolute; top: 20rem; left: calc(10rem - 80px); background-image: url(./assets/img/pikachu.png); background-size: contain"></div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/charmander.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/dratini.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/eevee.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/piplup.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/squirtle.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/bg.jpg" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/player.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/pokeball.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/pidgey.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/psyduck.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/meowth.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/gastly.png" alt="" height="10" width="10" />
+        </div>
+        <div class="fs-pkmn-loader">
+          <img src="/img/jigglypuff.png" alt="" height="10" width="10" />
+        </div>
+        <button class="fs-button btn">Gotta catch them all!</button>
+      </div>
+
+      <div class="description-screen screen">
+        <img height="100px" width="auto" style="margin-block-start: 1rem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
+        <h1 class="ds-title">Catch'em all</h1>
+        <p class="ds-description">
+          Your have to catch 12 Pokemon© in order to pass to the next level. You start the game with 5 lifes.
+          <br /><br />The difficulty increases with each level, and each level passing will grant you between 0 and 2 lifes (max 5 lifes)
+        </p>
+        <button class="ds-button btn">Let's go!</button>
+      </div>
+
+      <div class="game-screen screen">
+        <div class="gs-ball pokeball"></div>
+
+        <div class="gs-background"></div>
+        <div class="gs-pokemons"></div>
+        <div class="gs-header">
+          <div class="gs-pokeball-container"></div>
+          <div class="gs-lvl-container"></div>
+        </div>
+        <div class="gs-player"></div>
+      </div>
+    </div>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>
